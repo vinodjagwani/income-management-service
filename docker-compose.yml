@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  income-management-service:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.server
+    ports:
+      - 8099:8099
+      - 9099:9099

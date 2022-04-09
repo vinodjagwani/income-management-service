@@ -1,0 +1,9 @@
+FROM openjdk:17-jdk-slim
+
+EXPOSE 8099
+EXPOSE 9099
+EXPOSE 5006
+
+COPY ./build/libs/income-management-service-1.0.jar /app.jar
+
+CMD ["/usr/local/openjdk-17/bin/java", "-jar", "-Dspring.profiles.active=docker", "-Djdk.tls.client.protocols=TLSv1.2", "/app.jar"]

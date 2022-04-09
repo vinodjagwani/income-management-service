@@ -1,0 +1,13 @@
+[
+  {
+    "firstName": "Vinod",
+    "lastName": "Jagwani",
+    "fromDate": "2021-09-13",
+    "toDate": "2021-09-30",
+    "grossIncome": 50042,
+    "incomeTax": 39561,
+    "netIncome": 10481,
+    "superRate": 300502210,
+    "annualSalary": 600500
+  }
+]

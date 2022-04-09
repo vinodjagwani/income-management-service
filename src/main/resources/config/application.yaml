@@ -1,0 +1,75 @@
+spring:
+  application:
+    name: ${SPRING_APPLICATION_NAME:income-management-service}
+  webflux:
+    basePath: /income-management-service
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    discovery:
+      enabled: false
+  r2dbc:
+    url: r2dbc:pool:postgresql://localhost:5432/income-db?schema=public
+    username: postgres
+    password: postgres
+
+management:
+  server:
+    port: 9089
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, info, prometheus, beans
+      basePath: ${spring.webflux.basePath}/actuator
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    au:
+      seisma:
+        income: DEBUG
+    org:
+      zalando:
+        logbook: TRACE
+
+server:
+  port: 8089
+
+logbook:
+  include:
+    - /**
+  exclude:
+    - /actuator/**
+    - ${spring.webflux.basePath}/webjars/**
+    - ${spring.webflux.basePath}/v2/api-docs/**
+    - ${spring.webflux.basePath}/swagger-ui/**
+    - ${spring.webflux.basePath}/swagger-resources/**
+  filter.enabled: true
+  format.style: splunk
+  strategy: default
+  obfuscate:
+    parameters:
+      - access_token
+      - password
+      - token
+
+income-tax:
+  rates:
+    0-18200: 0,0,0
+    18201-37000: 0,19,18200
+    37001-87000: 3572,32.5,37000
+    87001-180000: 19822,37,87000
+    180001-99999999999: 54232,45,180000
+
+info:
+  build:
+    name: "@project.name@"
+    artifact: "@project.artifactId@"
+    version: "@project.version@"
+    groupId: "@project.groupId@"
+    java:
+      version: "@java.version@"
