@@ -39,6 +39,14 @@ http://localhost:9089/income-management-service/actuator/health
 from docker
 http://localhost:9099/income-management-service/actuator/health
 
+### Swagger url on local:
+
+from local
+http://localhost:8089/income-management-service/swagger-ui/index.html
+
+from docker
+http://localhost:8099/income-management-service/swagger-ui/index.html
+
 in order to access the api you can use follow curl:
 
 curl --location --request POST 'http://localhost:8089/income-management-service/v1/payslips/employees/monthly-payslips' \
@@ -109,6 +117,9 @@ curl --location --request POST 'http://azure-demo.centralus.azurecontainer.io:80
 
 ### Service health check url on azure cloud:
 http://azure-demo.centralus.azurecontainer.io:9099/income-management-service/actuator/health
+
+### Swagger url on azure cloud:
+http://azure-demo.centralus.azurecontainer.io:8099/income-management-service/swagger-ui/index.html
 
 
 ### Setup Azure cloud from locally (Optional)
