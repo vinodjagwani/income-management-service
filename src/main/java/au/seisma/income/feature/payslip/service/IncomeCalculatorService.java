@@ -10,6 +10,6 @@ public interface IncomeCalculatorService {
 
     BigDecimal calculateGrossIncome(final BigDecimal annualSalary);
 
-    BigDecimal calculateSupperRate(final BigDecimal annualSalary, final BigDecimal superRate);
+    BigDecimal calculateSuper(final BigDecimal annualSalary, final BigDecimal superRate);
 
 }

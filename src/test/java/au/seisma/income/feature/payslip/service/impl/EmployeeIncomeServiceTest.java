@@ -51,7 +51,7 @@ class EmployeeIncomeServiceTest {
     @Test
     @DisplayName("Calculate Employee Supper Rate")
     void testCalculateSupperRate() {
-        final BigDecimal result = employeeIncomeService.calculateSupperRate(BigDecimal.valueOf(5000L), BigDecimal.valueOf(7));
+        final BigDecimal result = employeeIncomeService.calculateSuper(BigDecimal.valueOf(5000L), BigDecimal.valueOf(7));
         assertEquals(BigDecimal.valueOf(29L), result);
     }
 }

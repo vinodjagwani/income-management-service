@@ -14,6 +14,6 @@ public record EmployeeSlipCreateDetailResponse(
         @ApiModelProperty(position = 5, name = "grossIncome", example = "123") @JsonProperty("grossIncome") BigDecimal grossIncome,
         @ApiModelProperty(position = 6, name = "incomeTax", example = "12") @JsonProperty("incomeTax") BigDecimal incomeTax,
         @ApiModelProperty(position = 7, name = "netIncome", example = "12") @JsonProperty("netIncome") BigDecimal netIncome,
-        @ApiModelProperty(position = 8, name = "superRate", example = "2") @JsonProperty("superRate") BigDecimal superRate,
+        @ApiModelProperty(position = 8, name = "super", example = "2") @JsonProperty("super") BigDecimal supper,
         @ApiModelProperty(position = 9, name = "annualSalary", example = "1000") @JsonProperty("annualSalary") BigDecimal annualSalary) {
 }

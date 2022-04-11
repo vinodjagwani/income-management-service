@@ -53,7 +53,7 @@ class EmployeePaySlipControllerTest {
                 .jsonPath("$[0].grossIncome").isEqualTo("50042")
                 .jsonPath("$[0].incomeTax").isEqualTo("39561")
                 .jsonPath("$[0].netIncome").isEqualTo("10481")
-                .jsonPath("$[0].superRate").isEqualTo("300502210")
+                .jsonPath("$[0].super").isEqualTo("300502210")
                 .jsonPath("$[0].annualSalary").isEqualTo("600500");
     }
 

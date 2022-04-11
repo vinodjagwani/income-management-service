@@ -35,14 +35,14 @@ class EmployeeMonthlyPaySlipServiceTest {
         when(incomeCalculatorService.calculateGrossIncome(any(BigDecimal.class))).thenReturn(BigDecimal.ONE);
         when(incomeCalculatorService.calculateIncomeTax(any(BigDecimal.class))).thenReturn(BigDecimal.ONE);
         when(incomeCalculatorService.calculateNetIncome(any(BigDecimal.class))).thenReturn(BigDecimal.ONE);
-        when(incomeCalculatorService.calculateSupperRate(any(BigDecimal.class), any(BigDecimal.class))).thenReturn(BigDecimal.ONE);
+        when(incomeCalculatorService.calculateSuper(any(BigDecimal.class), any(BigDecimal.class))).thenReturn(BigDecimal.ONE);
         final Flux<EmployeeSlipCreateDetailResponse> response = employeeMonthlyPaySlipService.generatePaySlip(Flux.just(buildEmployeeSlipCreateDetailRequest()));
         StepVerifier.create(response).expectNextCount(1).verifyComplete();
         response.blockFirst();
         verify(incomeCalculatorService, atLeastOnce()).calculateGrossIncome(any(BigDecimal.class));
         verify(incomeCalculatorService, atLeastOnce()).calculateIncomeTax(any(BigDecimal.class));
         verify(incomeCalculatorService, atLeastOnce()).calculateNetIncome(any(BigDecimal.class));
-        verify(incomeCalculatorService, atLeastOnce()).calculateSupperRate(any(BigDecimal.class), any(BigDecimal.class));
+        verify(incomeCalculatorService, atLeastOnce()).calculateSuper(any(BigDecimal.class), any(BigDecimal.class));
     }
 
     private EmployeeSlipCreateDetailRequest buildEmployeeSlipCreateDetailRequest() {

@@ -32,7 +32,7 @@ public class EmployeeMonthlyPaySlipService implements PaySlipService<Flux<Employ
                 incomeCalculatorService.calculateGrossIncome(request.annualSalary()),
                 incomeCalculatorService.calculateIncomeTax(request.annualSalary()),
                 incomeCalculatorService.calculateNetIncome(request.annualSalary()),
-                incomeCalculatorService.calculateSupperRate(request.annualSalary(), request.supperRate()),
+                incomeCalculatorService.calculateSuper(request.annualSalary(), request.supperRate()),
                 request.annualSalary()));
     }
 }

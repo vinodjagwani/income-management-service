@@ -49,8 +49,8 @@ public class EmployeeIncomeService implements IncomeCalculatorService {
     }
 
     @Override
-    public BigDecimal calculateSupperRate(final BigDecimal annualSalary, final BigDecimal superRate) {
-        log.debug("Start calculating supper rate for annualSalary {}", annualSalary);
+    public BigDecimal calculateSuper(final BigDecimal annualSalary, final BigDecimal superRate) {
+        log.debug("Start calculating super for annualSalary {}", annualSalary);
         return calculateGrossIncome(annualSalary).multiply(superRate).divide(BigDecimal.valueOf(100L), RoundingMode.HALF_EVEN);
     }
 }
